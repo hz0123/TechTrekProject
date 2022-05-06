@@ -2,25 +2,23 @@ import React, { useState } from "react";
 import Dashboard from "./john-components/Dashboard";
 import LoginForm from './mudz-components/LoginForm'
 import './Dashboard.css'
-import axios from "axios"
 
 function App() {
 
   const adminUser = {
-    email: "admin@admin.com",
+    username: "admin@admin.com",
     password: "admin123"
   }
 
-  const [user, setUser] = useState({name:"", email:""});
+  const [user, setUser] = useState({username:""});
   const [error, setError] = useState("");
 
   const Login = details => {
     console.log(details);
-    if (details.email == adminUser.email && details.password == adminUser.password){
+    if (details.username == adminUser.username && details.password == adminUser.password){
       console.log("Logged In")
       setUser({
-        name: details.name,
-        email: details.email
+        username: details.username
       });
     } else {
       console.log("Details Do Not Match!");
@@ -29,32 +27,14 @@ function App() {
   }
 
   const Logout = () => {
-    setUser({name: "", email: ""});
+    setUser({username: ""});
   }
-
-  // function getData() {
-  //   axios({
-  //     method: "GET",
-  //     url:"/login",
-  //   })
-  //   .then((response) => {
-  //     const res =response.data
-  //     setProfileData(({
-  //       email: res.email,
-  //       password: res.password}))
-  //   }).catch((error) => {
-  //     if (error.response) {
-  //       console.log(error.response)
-  //       console.log(error.response.status)
-  //       console.log(error.response.headers)
-  //       }
-  //   })}
 
   return (
     <div className="App">
-      {(user.email != "") ? (
+      {(user.username != "") ? (
         <div className="welcome">
-          <h2>Welcome, <span>{user.name}</span></h2>
+          <h2>Welcome, <span>{user.username}</span></h2>
           <button onClick={Logout}>Logout</button>
         </div>
       ) : (
