@@ -21,7 +21,8 @@ function App() {
         email: details.email
       });
     } else {
-      console.log("Details Do Not Match!")
+      console.log("Details Do Not Match!");
+      setError("Details Do Not Match!")
     }
   }
 
