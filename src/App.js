@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import Dashboard from "./john-components/Dashboard";
 import LoginForm from './mudz-components/LoginForm'
 
@@ -37,7 +38,7 @@ function App() {
     })
     .then((response) => {
       const res =response.data
-      setProfileData(({
+      setUser(({
         email: res.email,
         password: res.password}))
     }).catch((error) => {
