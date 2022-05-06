@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
 import Dashboard from "./john-components/Dashboard";
 import LoginForm from './mudz-components/LoginForm'
 

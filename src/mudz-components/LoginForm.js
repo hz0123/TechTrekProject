@@ -9,8 +9,7 @@ function LoginForm({ Login, error }) {
         Login(details);
     }
 
-
-  return (
+return (
     <form>
         <div className="form-inner">
             <h2>Login</h2>
