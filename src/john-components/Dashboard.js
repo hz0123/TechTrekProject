@@ -20,7 +20,7 @@ function Dashboard() {
     <div className = "App">
         <Header totalExpense={totalExpense} />
         <ExpenseForm expense={expense} setExpense={setExpense}/>
-        <ExpenseList expense={income} setExpense={setExpense} />
+        <ExpenseList expense={expense} setExpense={setExpense} />
         </div>
   )
 }
