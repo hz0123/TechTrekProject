@@ -21,13 +21,32 @@ function App() {
         email: details.email
       });
     } else {
-      console.log("Details Do Not Match!")
+      console.log("Details Do Not Match!");
+      setError("Details Do Not Match!")
     }
   }
 
   const Logout = () => {
     setUser({name: "", email: ""});
   }
+
+  function getData() {
+    axios({
+      method: "GET",
+      url:"/login",
+    })
+    .then((response) => {
+      const res =response.data
+      setProfileData(({
+        email: res.email,
+        password: res.password}))
+    }).catch((error) => {
+      if (error.response) {
+        console.log(error.response)
+        console.log(error.response.status)
+        console.log(error.response.headers)
+        }
+    })}
 
   return (
     <div className="App">
