@@ -31,17 +31,19 @@ public class UserController {
     }
 
     @PostMapping(path = "/findusername/{username}")
-    public Optional<List<UserModel>> findUsername(@PathVariable("username") String username){//test for controller response
+    public Optional<List<UserModel>> findUsername(@PathVariable("username") String username){
         return userService.findByusername(username);
     }
 
     @PostMapping(path = "/findname/{name}")
-    public Optional<List<UserModel>> findName(@PathVariable("name") String name){//test for controller response
+    public Optional<List<UserModel>> findName(@PathVariable("name") String name){
         return userService.findByname(name);
     }
 
     @PostMapping(path = "/findappointment/{appointment}")
-    public Optional<List<UserModel>> findAppointment(@PathVariable("appointment") String appointment){//test for controller response
+    public Optional<List<UserModel>> findAppointment(@PathVariable("appointment") String appointment){
         return userService.findByappointment(appointment);
     }
+
+
 }
