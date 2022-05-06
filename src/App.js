@@ -50,23 +50,17 @@ function App() {
   //       }
   //   })}
 
-
-
   return (
     <div className="App">
-
-      (user.email != "") ? (
+      {(user.email != "") ? (
         <div className="welcome">
-          <h2>Welcom, <span>{user.name}</span></h2>
-          <button>onClick={Logout}</button>
+          <h2>Welcome, <span>{user.name}</span></h2>
+          <button onClick={Logout}>Logout</button>
         </div>
       ) : (
-        <LoginForm />
-      )
-
-      
+        <LoginForm Login={Login} error={error} />
+      )}
     </div>
   );
-}
-
-export default App;
+      }
+export default App
