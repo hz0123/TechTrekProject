@@ -1,7 +1,7 @@
-package com.techtrek5.zihengBackend.UserPackage.controller;
+package com.techtrek5.zihengBackend.authentication.UserPackage.controller;
 
-import com.techtrek5.zihengBackend.UserPackage.model.UserModel;
-import com.techtrek5.zihengBackend.UserPackage.service.UserService;
+import com.techtrek5.zihengBackend.authentication.UserPackage.model.UserModel;
+import com.techtrek5.zihengBackend.authentication.UserPackage.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

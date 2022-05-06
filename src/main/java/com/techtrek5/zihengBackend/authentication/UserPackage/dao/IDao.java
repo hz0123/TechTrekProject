@@ -1,6 +1,6 @@
-package com.techtrek5.zihengBackend.UserPackage.dao;
+package com.techtrek5.zihengBackend.authentication.UserPackage.dao;
 
-import com.techtrek5.zihengBackend.UserPackage.model.UserModel;
+import com.techtrek5.zihengBackend.authentication.UserPackage.model.UserModel;
 
 import java.util.List;
 import java.util.Optional;
@@ -11,4 +11,6 @@ public interface IDao {
     Optional<List<UserModel>> findByname(String name);
     Optional<List<UserModel>> findByappointment(String appointment);
     UserModel save(UserModel userModel);
+    int enableUser(String email);
+    Optional<UserModel> findByusernameRegister(String username);
 }

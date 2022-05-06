@@ -14,3 +14,13 @@ spring:
     username: root
     password: root
     driver-class-name: com.mysql.jdbc.Driver
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: testacc186a565@gmail.com
+    password: Password1@
+    properties:
+      mail:
+        smtp:
+          starttls:
+            enable: true

@@ -1,6 +1,6 @@
-package com.techtrek5.zihengBackend.UserPackage.service;
+package com.techtrek5.zihengBackend.authentication.UserPackage.service;
 
-import com.techtrek5.zihengBackend.UserPackage.model.UserModel;
+import com.techtrek5.zihengBackend.authentication.UserPackage.model.UserModel;
 
 import java.util.List;
 import java.util.Optional;
@@ -11,4 +11,5 @@ public interface IService {
     Optional<List<UserModel>> findByname(String name);
     Optional<List<UserModel>> findByappointment(String appointment);
     String save(UserModel userModel);
+    int enableUser(String email);
 }
