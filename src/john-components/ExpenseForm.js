@@ -28,16 +28,16 @@ function ExpenseForm({expense, setExpense}) {
 
     <form className="expense-form" onSubmit={AddExpense}>
         <div className='form-inner'>
-            <input type="text" name="desc" id="desc" 
+            <input type="text" name="desc" id="desc"
             placeholder='Expense Description...'
             ref={desc}/>
-            <input type="number" name="price" id ="price"
+            <input type="number" name="price" id ="price" 
             placeholder='Price...'
             ref={price}/>
-            <input type="date" name="date" id="date"
+            <input type="date" name="date" id="date" 
             placeholder="Expense date..."
             ref={date}/>
-            <input type = "submit" value = "Add Expense" />
+            <input type = "submit" value = "Add Expense"/>
         </div>
     </form>
   )

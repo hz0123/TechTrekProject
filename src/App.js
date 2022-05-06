@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Dashboard from "./john-components/Dashboard";
 import LoginForm from './mudz-components/LoginForm'
+import './Dashboard.css'
+import axios from "axios"
 
 function App() {
 
@@ -48,22 +50,21 @@ function App() {
         }
     })}
 
+
+
   return (
     <div className="App">
-      {/*{(user.email != "") ? (
+
+      (user.email != "") ? (
         <div className="welcome">
           <h2>Welcom, <span>{user.name}</span></h2>
           <button>onClick={Logout}</button>
         </div>
       ) : (
         <LoginForm />
-      )}
-      */}
+      )
 
-        
       
-
-      <Dashboard />
     </div>
   );
 }
