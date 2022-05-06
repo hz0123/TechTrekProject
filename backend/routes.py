@@ -1,8 +1,8 @@
 from flask import Flask
 
-api = Flask(__name__)
+app = Flask(__name__)
 
-@api.route('/login')
+@app.route('/login')
 def login():
     response_body = {
         "email": "admin@admin.com",
@@ -10,6 +10,8 @@ def login():
     }
     return response_body
 
+if __name__ == "__main__":
+    app.run(debug=True)
 # @auth.route("/login", methods=["GET", "POST"])
 # def login():
 #     if current_user.is_authenticated:
