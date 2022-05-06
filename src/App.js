@@ -51,7 +51,7 @@ function App() {
 
   return (
     <div className="App">
-      {(user.email != "") ? (
+      {/*{(user.email != "") ? (
         <div className="welcome">
           <h2>Welcom, <span>{user.name}</span></h2>
           <button>onClick={Logout}</button>
@@ -59,6 +59,12 @@ function App() {
       ) : (
         <LoginForm />
       )}
+      */}
+
+        
+      
+
+      <Dashboard />
     </div>
   );
 }
