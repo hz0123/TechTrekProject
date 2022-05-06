@@ -7,22 +7,22 @@ from flask_login import UserMixin
 if __name__ == "__main__":
     from flask import Flask
     from flask_sqlalchemy import SQLAlchemy
-    from flask_login import LoginManager
     from config import Config
 
     current_app = Flask(__name__)
     current_app.config.from_object(Config)
     db = SQLAlchemy(current_app)
-    login_manager = LoginManager(current_app)
-
 
 else:
+    from flask import Flask
+    from flask_sqlalchemy import SQLAlchemy
+    from .config import Config
     from flask import current_app
-    from tt import db, login_manager
+    db = SQLAlchemy(current_app)
 
-@login_manager.user_loader
-def load_user(user_id):
-    return User.query.get(int(user_id))
+# @login_manager.user_loader
+# def load_user(user_id):
+#     return User.query.get(int(user_id))
 
 class Category(db.Model):
     id = db.Column(db.Integer, primary_key=True)

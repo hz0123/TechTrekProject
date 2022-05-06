@@ -31,23 +31,23 @@ function App() {
     setUser({name: "", email: ""});
   }
 
-  function getData() {
-    axios({
-      method: "GET",
-      url:"/login",
-    })
-    .then((response) => {
-      const res =response.data
-      setUser(({
-        email: res.email,
-        password: res.password}))
-    }).catch((error) => {
-      if (error.response) {
-        console.log(error.response)
-        console.log(error.response.status)
-        console.log(error.response.headers)
-        }
-    })}
+  // function login() {
+  //   axios({
+  //     method: "GET",
+  //     url:"/login",
+  //   })
+  //   .then((response) => {
+  //     const res =response.data
+  //     setUser(({
+  //       email: res.email,
+  //       password: res.password}))
+  //   }).catch((error) => {
+  //     if (error.response) {
+  //       console.log(error.response)
+  //       console.log(error.response.status)
+  //       console.log(error.response.headers)
+  //       }
+  //   })}
 
   return (
     <div className="App">
