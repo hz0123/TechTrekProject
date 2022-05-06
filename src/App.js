@@ -32,7 +32,11 @@ function App() {
     setUser({name: "", email: ""});
   }
 
+<<<<<<< HEAD
   // function getData() {
+=======
+  // function login() {
+>>>>>>> hongyew
   //   axios({
   //     method: "GET",
   //     url:"/login",
