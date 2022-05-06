@@ -71,4 +71,19 @@ public class ExpenseController {
         return expenseService.findByupdatedBy(updatedBy);
     }
 
+    @GetMapping(path = "/findall")
+    public Optional<List<ExpenseModel>> findAll(){
+        return expenseService.findAllExpense();
+    }
+
+    @PostMapping(path = "/updateexpenses")
+    public void updateExpenses(@RequestBody ExpenseModel expenseModel){
+        expenseService.updateExpanseModel(expenseModel);
+    }
+
+    @PostMapping(path = "/deleteexpenses/{id}")
+    public void updateExpenses(@PathVariable("id") long id){
+        expenseService.deleteByid(id);
+    }
+
 }

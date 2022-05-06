@@ -71,5 +71,40 @@ public class ExpenseService implements ExpenseIService {
         return iExpenseDao.save(expenseModel);
     }
 
+    @Override
+    public Optional<List<ExpenseModel>> findAllExpense() {
+        return iExpenseDao.findAllExpense();
+    }
+
+    @Override
+    public int updateExpanseModel(ExpenseModel expenseModel) {
+        long id = expenseModel.getId();
+        String projectId = expenseModel.getProjectId();
+        String categoryId  = expenseModel.getCategoryId();
+        String name =  expenseModel.getName();
+        String description = expenseModel.getDescription();
+        float amount = expenseModel.getAmount();
+        LocalDate createdAt = expenseModel.getCreatedAt();
+        String createdBy = expenseModel.getCreatedBy();
+        String updatedAt = expenseModel.getUpdatedAt();
+        String updatedBy = expenseModel.getUpdatedBy();
+        return iExpenseDao.updateExpanseModel(
+                                            id,
+                                            amount,
+                                            categoryId,
+                                            createdAt,
+                                            createdBy,
+                                            description,
+                                            name,
+                                            projectId,
+                                            updatedAt,
+                                            updatedBy);
+    }
+
+    @Override
+    public int deleteByid(long id) {
+        return iExpenseDao.deleteByid(id);
+    }
+
 
 }

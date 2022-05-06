@@ -1,5 +1,6 @@
 package com.techtrek5.zihengBackend.ExpensePackage.service;
 
+import com.techtrek5.zihengBackend.CategoryPackage.model.CategoryModel;
 import com.techtrek5.zihengBackend.ExpensePackage.model.ExpenseModel;
 
 import java.time.LocalDate;
@@ -18,4 +19,7 @@ public interface ExpenseIService {
     Optional<List<ExpenseModel>> findByupdatedAt(String updatedAt);
     Optional<List<ExpenseModel>> findByupdatedBy(String updatedBy);
     ExpenseModel save (ExpenseModel expenseModel);
+    Optional<List<ExpenseModel>> findAllExpense();
+    int updateExpanseModel(ExpenseModel expenseModel);
+    int deleteByid(long id);
 }

@@ -1,5 +1,6 @@
 package com.techtrek5.zihengBackend.ExpensePackage.dao;
 
+import com.techtrek5.zihengBackend.CategoryPackage.model.CategoryModel;
 import com.techtrek5.zihengBackend.ExpensePackage.model.ExpenseModel;
 
 import java.time.LocalDate;
@@ -18,4 +19,16 @@ public interface IExpenseDao {
     Optional<List<ExpenseModel>> findByupdatedAt(String updatedAt);
     Optional<List<ExpenseModel>> findByupdatedBy(String updatedBy);
     ExpenseModel save(ExpenseModel expenseModel);
+    Optional<List<ExpenseModel>> findAllExpense();
+    int updateExpanseModel(long id,
+                           float amount,
+                           String categoryId,
+                           LocalDate createdAt,
+                           String createdBy,
+                           String description,
+                           String name,
+                           String projectId,
+                           String updatedAt,
+                           String updatedBy);
+    int deleteByid(long id);
 }
