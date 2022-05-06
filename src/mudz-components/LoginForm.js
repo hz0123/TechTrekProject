@@ -12,7 +12,7 @@ function LoginForm({ Login, error }) {
     return (
         <form onSubmit={submitHandler}>
             <div className="form-inner">
-                <h2>Login</h2>
+                <h2>Welcome to SEED Budget Management</h2>
                 <div className="form-group">
                     <label htmlFor="username">Username: </label>
                     <input type="username" name="username" id="username"
