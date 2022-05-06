@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Dashboard from "./john-components/Dashboard";
 import LoginForm from './mudz-components/LoginForm'
+import './Dashboard.css'
+import axios from "axios"
 
 function App() {
 
@@ -21,7 +23,8 @@ function App() {
         email: details.email
       });
     } else {
-      console.log("Details Do Not Match!")
+      console.log("Details Do Not Match!");
+      setError("Details Do Not Match!")
     }
   }
 
@@ -29,16 +32,39 @@ function App() {
     setUser({name: "", email: ""});
   }
 
+  // function getData() {
+  //   axios({
+  //     method: "GET",
+  //     url:"/login",
+  //   })
+  //   .then((response) => {
+  //     const res =response.data
+  //     setProfileData(({
+  //       email: res.email,
+  //       password: res.password}))
+  //   }).catch((error) => {
+  //     if (error.response) {
+  //       console.log(error.response)
+  //       console.log(error.response.status)
+  //       console.log(error.response.headers)
+  //       }
+  //   })}
+
+
+
   return (
     <div className="App">
-      {(user.email != "") ? (
+
+      (user.email != "") ? (
         <div className="welcome">
           <h2>Welcom, <span>{user.name}</span></h2>
           <button>onClick={Logout}</button>
         </div>
       ) : (
         <LoginForm />
-      )}
+      )
+
+      
     </div>
   );
 }

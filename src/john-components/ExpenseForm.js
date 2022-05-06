@@ -1,16 +1,43 @@
+import { useRef } from "react";
 import React from 'react'
 
-function ExpenseForm() {
+function ExpenseForm({expense, setExpense}) {
+  const desc = useRef(null);
+  const date = useRef(null);
+  const price = useRef(null);
+
+
+  const AddExpense = e => {
+    e.preventDefault();
+
+    let d =date.current.value.split("-");
+    let newD = new Date(d[0], d[1], d[2]);
+
+    setExpense([...expense, {
+      "desc": desc.current.value,
+      "price": price.current.value,
+      "date": newD.getTime()
+    }]);
+
+    desc.current.value=null;
+    price.current.value=null;
+    date.current.value=null;
+  }
+
   return (
-    <form className="expense-form">
+
+    <form className="expense-form" onSubmit={AddExpense}>
         <div className='form-inner'>
-            <input type="text" name="desc" id="desc" 
-            placeholder='Expense Description...'/>
-            <input type="number" name="price" id ="price"
-            placeholder='Price...'/>
-            <input type="date" name="date" id="date"
-            placeholder="Expense date..."/>
-            <input type = "submit" value = "Add Expense" />
+            <input type="text" name="desc" id="desc"
+            placeholder='Expense Description...'
+            ref={desc}/>
+            <input type="number" name="price" id ="price" 
+            placeholder='Price...'
+            ref={price}/>
+            <input type="date" name="date" id="date" 
+            placeholder="Expense date..."
+            ref={date}/>
+            <input type = "submit" value = "Add Expense"/>
         </div>
     </form>
   )
