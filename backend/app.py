@@ -35,8 +35,9 @@ def expense():
         "updatedAt": "2021-11-07T16:00:00.000Z",
         "updatedBy": "Helen"
     }]
-    return redirect("www.google.com")
-    # return jsonify(jsonlist)
+    # return redirect("www.google.com")
+    return jsonify(jsonlist)
+    # return redirect('/login')
 
 api.add_resource(ApiHandler, '/expense')
 
