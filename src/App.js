@@ -1,4 +1,5 @@
 import React from "react"
+import Dashboard from "./john-components/Dashboard";
 
 function App() {
   return (
@@ -6,7 +7,8 @@ function App() {
       <header className="App-header">
         
         <a>
-          Learn React
+          
+        Hello
         </a>
       </header>
     </div>
