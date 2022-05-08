@@ -30,44 +30,17 @@ function App() {
     setUser({username: ""});
   }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-  // function getData() {
-=======
-  // function login() {
->>>>>>> hongyew
-  //   axios({
-  //     method: "GET",
-  //     url:"/login",
-  //   })
-  //   .then((response) => {
-  //     const res =response.data
-  //     setProfileData(({
-  //       email: res.email,
-  //       password: res.password}))
-  //   }).catch((error) => {
-  //     if (error.response) {
-  //       console.log(error.response)
-  //       console.log(error.response.status)
-  //       console.log(error.response.headers)
-  //       }
-  //   })}
-
-
-
-=======
->>>>>>> 6ee790b75fa53f526655ca373bdeec8dd4297963
   return (
     <div className="App">
-      {(user.username != "") ? (
+      {/* {(user.username != "") ? (
         <div className="welcome">
           <h2>Welcome, <span>{user.username}</span></h2>
           <button onClick={Logout}>Logout</button>
         </div>
       ) : (
         <LoginForm Login={Login} error={error} />
-      )}
+      )} */}
+      <Dashboard/>
     </div>
-  );
-      }
+  );}
 export default App

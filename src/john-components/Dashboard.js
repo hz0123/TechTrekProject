@@ -69,9 +69,10 @@ function Dashboard() {
         <ul>
           {data.map((data) => (
             <li key={data.projectId}>
-              <p>{data.name}</p>
-              <p>{data.amount}</p>
-              <p>{data.updatedAt}</p>
+              <p>name: {data.name}</p>
+              <p>amount: ${data.amount}</p>
+              <p>date: {data.updatedAt}</p>
+              <br></br>
             </li>))}
         </ul>
         <Header totalExpense={totalExpense} />
